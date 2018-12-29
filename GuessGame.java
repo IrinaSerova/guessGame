@@ -6,7 +6,9 @@ public class GuessGame {
 	public static void main(String[] args) {
 		// get ready to supply input data 
 		Scanner scan = new Scanner(System.in);
-		
+		// play again variable
+		String newGame = "";
+		do {
 		// create a random number from 1 - 100
 		int randomNumber = (int)(Math.random()*100 + 1);
 		int guess = 0;
@@ -28,7 +30,14 @@ public class GuessGame {
 				// congratulations
 				System.out.println(" Your Number " + guess + " is correct. Congratulations! You Won!");			
 		} // end of while loop for comparing
-			
+		
+		// ask for player to play again
+		
+		System.out.println("Would you like to play one more time (y/n)? ");
+		newGame = scan.next();
+	} while (newGame.equalsIgnoreCase("y")); 
+		// thanks for game
+		System.out.println("Thank you for playing!");
 		
 
 	}
