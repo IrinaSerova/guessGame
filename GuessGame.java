@@ -8,16 +8,20 @@ public class GuessGame {
 		Scanner scan = new Scanner(System.in);
 		// play again variable
 		String newGame = "";
+		
 		do {
 		// create a random number from 1 - 100
 		int randomNumber = (int)(Math.random()*100 + 1);
 		int guess = 0;
+		// keep track of the number of attempts
+		int numberOfAttempts = 0;
 		// start while loop for guessing
 		while(guess != randomNumber) {
 			System.out.println("Guess a number between 1 and 100: ");
 			// get the user's number
 			guess = scan.nextInt();
-			
+			// add one to the attempts
+			numberOfAttempts++;
 			// compare user's number to randomNumber
 			
 			if (guess < randomNumber)
@@ -30,7 +34,8 @@ public class GuessGame {
 				// congratulations
 				System.out.println(" Your Number " + guess + " is correct. Congratulations! You Won!");			
 		} // end of while loop for comparing
-		
+		System.out.println("Good Job! It only took you " + numberOfAttempts
+				+ " tries!");
 		// ask for player to play again
 		
 		System.out.println("Would you like to play one more time (y/n)? ");
